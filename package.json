@@ -2,7 +2,6 @@
   "name": "wyy",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "lint-staged": {
     "*.{vue,js,ts}": "eslint --fix"
   },
