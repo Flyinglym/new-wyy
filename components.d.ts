@@ -10,14 +10,24 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElButtonGroup: typeof import('element-plus/es')['ElButtonGroup']
+    ElCarousel: typeof import('element-plus/es')['ElCarousel']
+    ElCarouselItem: typeof import('element-plus/es')['ElCarouselItem']
+    ElDialog: typeof import('element-plus/es')['ElDialog']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElInput: typeof import('element-plus/es')['ElInput']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
-    ElMenuMenu: typeof import('element-plus/es')['ElMenuMenu']
-    ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+    ElMenuMenu: typeof import("element-plus/es")["ElMenuMenu"]
+    ElSubMenu: typeof import("element-plus/es")["ElSubMenu"]
+    ElTabPane: typeof import('element-plus/es')['ElTabPane']
+    ElTabs: typeof import('element-plus/es')['ElTabs']
+    ElTooltip: typeof import('element-plus/es')['ElTooltip']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    LoginDialog: typeof import('./src/components/loginDialog.vue')['default']
+    NewAlbumBox: typeof import('./src/components/newAlbumBox.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SongSheetBox: typeof import('./src/components/songSheetBox.vue')['default']
   }
 }
