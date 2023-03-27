@@ -1,10 +1,9 @@
-import {createRouter, createWebHistory} from "vue-router";
-import {routes} from "./route";
-
+import { createRouter, createWebHistory } from "vue-router";
+import { routes } from "./route";
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes,
-})
+  history: createWebHistory(),
+  routes
+});
 
-export default router
+export default router;
