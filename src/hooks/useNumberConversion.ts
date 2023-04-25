@@ -1,7 +1,7 @@
 // 将大数字转换为以 万、亿 结尾
 export const useNumberConversion = (value: number) => {
   let numerical: any = [];
-  let k = 100000,
+  let k = 10000,
     sizes = ["", "万", "亿", "万亿"],
     i;
   if (value < k) {

@@ -23,21 +23,25 @@
       </div>
       <div><a href="#">更多 ></a></div>
     </div>
-
     <!--  新碟组件  -->
     <newAlbumBox :albumNew="data.albumNew" />
   </div>
-  <div>
-    <div class="mainNav">
-      <h2>榜单</h2>
-      <div><a href="#">更多 ></a></div>
-    </div>
-  </div>
+
+  <!--  <div>-->
+  <!--    <div class="mainNav">-->
+  <!--      <h2>榜单</h2>-->
+  <!--      <div><a href="#">更多 ></a></div>-->
+  <!--    </div>-->
+  <!--    &lt;!&ndash;  榜单  &ndash;&gt;-->
+  <!--    <div></div>-->
+  <!--  </div>-->
 </template>
 
 <script setup lang="ts">
-import { getBanner, getRecommend, getAlbumNew } from "../../../api/home";
+import { getBanner, getRecommend, getAlbumNew } from "../../../api/findMusic/home";
+import {getAllRankings} from "../../../api/findMusic/theCharts";
 import { reactive } from "vue";
+import store from 'storejs'
 
 // 按钮组的配置
 const buttons = [
@@ -47,7 +51,13 @@ const buttons = [
   { area: "JP", text: "日本" }
 ] as const;
 
-let data = reactive({ bannerList: {}, recommendList: {}, albumNew: {} });
+let data = reactive({ bannerList: {}, recommendList: {}, albumNew: {}, allRankings: {} });
+
+//
+getAllRankings().then(res=>{
+  store.set('singingId',res.data.list[0].id)
+  // console.log(res.data.list[0].id)
+})
 // 获取轮播图
 getBanner().then(res => {
   data.bannerList = res.data.banners;
@@ -62,8 +72,13 @@ getRecommend(10).then(res => {
 getAlbumNew(10).then(res => {
   data.albumNew = res.data.albums;
 });
+// 获取所有榜单
+// getAllRankings().then(res=>{
+//   console.log(res.data);
+//   data.allRankings = res.data
+// })
 
-// 获取不同区域歌单
+// 点击获取不同区域歌单
 let getAreaAlbum = (area: string) => {
   getAlbumNew(10, area).then(res => {
     data.albumNew = res.data.albums;

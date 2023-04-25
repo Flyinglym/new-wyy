@@ -1,4 +1,4 @@
-import { request } from "./index";
+import { request } from "../index";
 import type { AxiosPromise } from "axios";
 
 // 获取二维码登录的key
@@ -40,6 +40,7 @@ interface Banners$1Type {
   scm?: string;
   bannerBizType?: string;
 }
+
 type getBannerType = {
   banners: Array<Banners$1Type>;
   code: number;
@@ -60,6 +61,7 @@ interface Recommend$1Type {
   highQuality: boolean;
   alg: string;
 }
+
 type getRecommendType = {
   hasTaste: boolean;
   code: number;
@@ -89,6 +91,7 @@ interface Artists$1Type {
   id: number;
   img1v1Id_str: string;
 }
+
 interface Artist$2Type {
   img1v1Id: number;
   topicPerson: number;
@@ -106,6 +109,7 @@ interface Artist$2Type {
   picId_str: string;
   img1v1Id_str: string;
 }
+
 interface Albums$3Type {
   songs: Array<any>;
   paid: boolean;
@@ -142,3 +146,6 @@ type AlbumNewType = {
   code: number;
 };
 export const getAlbumNew = (limit: number, area: string = "ZH"): AxiosPromise<AlbumNewType> => request.get(`/album/new?area=${area}&limit=${limit}`);
+
+
+
