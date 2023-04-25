@@ -45,6 +45,8 @@ import { useLayoutStore } from "../store";
 
 let activeIndex = ref("1");
 let handleSelect = (index: string) => {
+  // router.push({ name: 'theCharts' });
+
   // 路由跳转
   switch (index) {
     case "1":
@@ -54,7 +56,7 @@ let handleSelect = (index: string) => {
       router.push({ name: "my" });
       break;
   }
-  console.log(index);
+  // console.log(index);
 };
 
 // 点击登录弹出对话框

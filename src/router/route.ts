@@ -18,6 +18,11 @@ export const routes: Array<RouteRecordRaw> = [
             path: "discover",
             name: "discover",
             component: () => import("../views/findMusic/discover/discover.vue")
+          },
+          {
+            path: "theCharts",
+            name: "theCharts",
+            component: () => import("../views/findMusic/theCharts/theCharts.vue")
           }
         ]
       },
